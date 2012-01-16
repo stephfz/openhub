@@ -13,3 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore all text editor default files.
+openhub.sublime-project
+openhub.sublime-workspace
