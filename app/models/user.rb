@@ -1,5 +1,12 @@
 class User < ActiveRecord::Base
 
+  def self.find_or_create_with_omniauth(auth)
+    user = find_by_provider_and_uid(auth["provider"], auth["uid"]) 
+    user || create_with_omniauth(auth)
+  end
+
+  private
+
   def self.create_with_omniauth(auth)
     create! do |user|
       user.uid      = auth["uid"]
