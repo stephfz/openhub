@@ -15,8 +15,9 @@
               = link_to "OpenHub", "/"
             .nav_right
               - if current_user
-                %img{src: current_user.photo, height: "30px", width: "30px"}
-                = current_user.name
+                %img{src: current_user.photo, height: "23px", width: "23px"}
+                %span.name 
+                  = current_user.name
                 = link_to "Sign Out", signout_path
               - else
                 = link_to "Sign it with Twitter", "/auth/twitter"
