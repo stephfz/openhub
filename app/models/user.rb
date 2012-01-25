@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :presentations
+
 
   def self.find_or_create_with_omniauth(auth)
     user = find_by_provider_and_uid(auth["provider"], auth["uid"]) 
